@@ -7,7 +7,7 @@ var ran = 0;
 var avg = [];
 var max_size = 20;
 var max_ignore = 0;
-var cur_size = 0;
+var cur_size = 1;
 
 
 function run() {
@@ -55,6 +55,6 @@ function get_res(cur_size) {
 function doJob(i) {
   cur = 0;
   res_array = [];
-  run(i);
+  run();
   return avg;
 }
