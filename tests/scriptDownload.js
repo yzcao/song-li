@@ -13,9 +13,9 @@ var cur_size = 1;
 function run() {
   var file_name = cur_size.toString() + "M.js";
   var element_s = document.createElement('script');
-  start = performance.now();
   document.body.appendChild(element_s);
   element_s.src = file_name;
+  start = performance.now();
 }
 
   window.onerror = function(e) {
