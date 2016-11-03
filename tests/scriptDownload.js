@@ -7,10 +7,10 @@ var ran = 0;
 var avg = [];
 var max_size = 20;
 var max_ignore = 0;
+var cur_size = 0;
 
 
-
-function run(cur_size) {
+function run() {
   var file_name = cur_size.toString() + "M.js";
   var element_s = document.createElement('script');
   document.body.appendChild(element_s);
@@ -22,7 +22,7 @@ function run(cur_size) {
     var end = performance.now();
     var res = end - start;
     addToRes(cur_size, res); 
-    if(cur < payload) run(cur_size);
+    if(cur < payload) run();
     else if(cur_size < max_size) doJob(++ cur_size); 
     cur ++;
   }
