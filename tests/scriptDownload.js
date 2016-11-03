@@ -6,14 +6,18 @@ var pre_start = 0;
 var ran = 0;
 var avg = [];
 var max_size = 20;
-var max_ignore = 6;
+var max_ignore = 0;
+
+
 
 function run(cur_size) {
   var file_name = cur_size.toString() + "M.js";
   var element_s = document.createElement('script');
-  start = performance.now();
   document.body.appendChild(element_s);
   element_s.src = file_name;
+  start = performance.now();
+}
+
   window.onerror = function(e) {
     var end = performance.now();
     var res = end - start;
@@ -22,8 +26,6 @@ function run(cur_size) {
     else if(cur_size < max_size) doJob(++ cur_size); 
     cur ++;
   }
-}
-
 
 function addToRes(cur_size, during) {
   res_array.push(during); 
